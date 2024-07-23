@@ -143,4 +143,5 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
     const tipAmount = (billAmount * tipPercentage / 100).toFixed(2);
     
     // Calculate the total //
+
 <hr>
