@@ -142,6 +142,4 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
     // Calculate the tip amount based on the bill amount and tip percentage
     const tipAmount = (billAmount * tipPercentage / 100).toFixed(2);
     
-    // Calculate the total //
-
-<hr>
+    // Calculate the total 
