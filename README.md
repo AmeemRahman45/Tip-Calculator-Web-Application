@@ -1,20 +1,20 @@
-<h1>💸 Tip Calculator 💸</h1>
+<h1>📋 Simple Form Validation 📋</h1>
 <p>
-    Welcome to the Tip Calculator! This handy web app helps you quickly and accurately calculate tips based on your bill amount and desired tip percentage.
+    Welcome to the Simple Form Validation project! This web application provides a user-friendly form with real-time validation for name, email, and phone number inputs.
 </p>
 <br>
 <h3>🚀 Features</h3>
 <ul>
-    <li>🧮 Easy Calculation: Enter the bill amount and tip percentage to get the tip and total amount.</li>
-    <li>🎨 Clean and Modern Design: User-friendly interface with a visually appealing background.</li>
-    <li>🔄 Real-time Results: Instantly see the calculated tip and total amount after clicking the button.</li>
+    <li>🛠 Real-time Validation: Ensures that all required fields are filled correctly before submission.</li>
+    <li>🎨 Modern Design: Clean, intuitive interface with visually appealing elements.</li>
+    <li>🔄 Error Handling: Provides immediate feedback on input errors to guide user corrections.</li>
 </ul>
 <br>
 <h3>🔧 Technologies Used</h3>
 <ul>
-    <li>HTML: Structure and layout.</li>
-    <li>CSS: Styling and responsive design.</li>
-    <li>JavaScript: Functionality for calculating and displaying the tip.</li>
+    <li>HTML: Structure and layout of the form.</li>
+    <li>CSS: Styling and responsive design for a polished look.</li>
+    <li>JavaScript: Functionality for form validation and user feedback.</li>
 </ul>
 <br><br>
 <h3>📋 Code Explanation</h3>
@@ -31,21 +31,20 @@
     &lt;link&gt;: Includes external resources such as fonts from Google Fonts and a stylesheet for styling.
 &lt;/head&gt;
 &lt;body&gt;: Contains the content of the webpage.
-    &lt;div class="container"&gt;: A central container for aligning and styling content.
-        &lt;h1 class="tipCalculator"&gt;: A heading for the tip calculator section, styled to stand out.
-        &lt;form id="tipForm"&gt;: A form containing input fields for bill amount and tip percentage.
-            &lt;label for="billAmount" class="billAmount"&gt;: A label for the bill amount input field.
-            &lt;input type="number" id="billAmount" step="0.01" required&gt;: An input field for entering the bill amount.
-            &lt;label for="tipPercentage" class="tipPercentage"&gt;: A label for the tip percentage input field.
-            &lt;input type="number" id="tipPercentage" step="0.1" required&gt;: An input field for entering the tip percentage.
-            &lt;button type="button" id="calculateBtn"&gt;: A button to trigger the calculation.
-        &lt;/form&gt;
-        &lt;div id="result"&gt;: A container for displaying the calculated tip and total amount.
-            &lt;p id="tipAmount"&gt;: A paragraph element to display the tip amount.
-            &lt;p id="totalAmount"&gt;: A paragraph element to display the total amount.
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;script src="/js/script.js"&gt;&lt;/script&gt;: Links to an external JavaScript file that contains the logic for calculating and displaying the tip.
+    &lt;form id="contactForm"&gt;: Defines the form with an ID of 'contactForm'.
+        &lt;h2 class="contact-us"&gt;: A heading for the contact section.
+        &lt;label for="name"&gt;: A label for the name input field.
+        &lt;input type="text" id="name" name="name" required&gt;: An input field for entering the name.
+        &lt;span id="nameError"&gt;: A container for displaying error messages for the name field.
+        &lt;label for="email"&gt;: A label for the email input field.
+        &lt;input type="email" id="email" name="email" required&gt;: An input field for entering the email.
+        &lt;span id="emailError"&gt;: A container for displaying error messages for the email field.
+        &lt;label for="phone"&gt;: A label for the phone input field.
+        &lt;input type="tel" id="phone" name="phone"&gt;: An input field for entering the phone number.
+        &lt;span id="phoneError"&gt;: A container for displaying error messages for the phone field.
+        &lt;button type="submit"&gt;: A button to submit the form.
+    &lt;/form&gt;
+    &lt;script src="/js/main.js"&gt;&lt;/script&gt;: Links to an external JavaScript file that contains the logic for form validation.
 &lt;/body&gt;
         </pre>
     </li>
@@ -53,93 +52,136 @@
         <h4>CSS Styling</h4>
         <pre>
 body: Styles the background and centers the content vertically and horizontally.
-    background-image: url('/img/dust-particles-wallpapers.jpg'): Sets a full-screen background image.
+    background-image: url('/img/grunge-texture-4k-wallpapers.jpg'): Sets a full-screen background image.
     background-size: cover: Ensures the image covers the entire background area.
-    background-position: center center: Centers the background image.
-.container: Styles the container that holds the content.
-    text-align: center: Centers text inside the container.
-    background-color: rgba(255, 255, 255, 0.9): Sets a translucent white background for better contrast.
-    padding: 40px: Adds padding inside the container.
-    border-radius: 10px: Rounds the corners of the container.
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1): Adds a subtle shadow for a 3D effect.
-    width: 300px: Sets the width of the container.
-    margin: auto: Centers the container horizontally.
+    background-position: center: Centers the background image.
+    background-repeat: no-repeat: Prevents the background image from repeating.
 form: Styles the form inside the container.
-    display: flex: Aligns form elements vertically.
-    flex-direction: column: Stacks form elements vertically.
-    align-items: center: Centers form elements horizontally.
+    background: #fff: Sets a white background for the form.
+    padding: 40px: Adds padding inside the form.
+    border-radius: 8px: Rounds the corners of the form.
+    border: 5px solid #47B0AA: Adds a border around the form.
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1): Adds a subtle shadow for a 3D effect.
+    max-width: 400px: Sets the maximum width of the form.
+    width: 100%: Makes the form full-width within its container.
 label: Styles the labels inside the form.
     display: block: Makes labels block-level elements.
-    margin: 10px 0 5px: Adds margin around labels.
-    text-align: center: Centers label text.
-input: Styles the input fields inside the form.
-    width: 100%: Makes input fields full-width.
-    padding: 10px: Adds padding inside input fields.
-    margin-bottom: 10px: Adds margin below input fields.
-    border: 1px solid #ccc: Adds a border around input fields.
-    border-radius: 5px: Rounds the corners of input fields.
-    box-sizing: border-box: Ensures padding and border are included in the width and height.
-    font-family: "Roboto", sans-serif: Uses a sans-serif font for input text.
-    font-weight: 400: Uses normal font weight for input text.
-    font-size: 16px: Sets the font size of input text.
-button: Styles the button used to calculate the tip.
-    background-color: #007bff: Sets a blue background color.
-    color: white: Makes the button text white.
-    border: none: Removes default button border.
-    padding: 10px 20px: Adds padding inside the button.
-    border-radius: 5px: Rounds the corners of the button.
-    cursor: pointer: Changes the cursor to a pointer when hovering over the button.
-    text-align: center: Centers button text.
-    font-family: "Roboto", sans-serif: Uses a sans-serif font for button text.
-    font-weight: 500: Uses medium font weight for button text.
-    font-size: 16px: Sets the font size of button text.
-    letter-spacing: 1.5px: Adds space between letters in button text.
-    text-transform: uppercase: Makes button text uppercase.
-button:hover: Styles the button when hovered over.
-    background-color: #0056b3: Changes the button color on hover for a visual effect.
-#result: Styles the container for the calculated tip and total amount.
-    margin-top: 20px: Adds margin above the result container.
-#result p: Styles the paragraphs inside the result container.
-    font-family: "Roboto", sans-serif: Uses a sans-serif font for result text.
-    font-weight: 400: Uses normal font weight for result text.
-    font-size: 14px: Sets the font size of result text.
-    letter-spacing: 0.5px: Adds space between letters in result text.
-    margin: 5px 0: Adds margin around result paragraphs.
-    padding: 3px: Adds padding inside result paragraphs.
-.billAmount: Styles the bill amount label.
-    font-family: "Roboto", sans-serif: Uses a sans-serif font.
-    font-weight: 500: Uses medium font weight.
-    font-size: 16px: Sets the font size of the label text.
-    letter-spacing: 0.5px: Adds space between letters in the label text.
-.tipPercentage: Styles the tip percentage label.
-    font-family: "Roboto", sans-serif: Uses a sans-serif font.
-    font-weight: 500: Uses medium font weight.
-    font-size: 16px: Sets the font size of the label text.
-    letter-spacing: 0.5px: Adds space between letters in the label text.
-.tipCalculator: Styles the heading for the tip calculator section.
-    font-family: "Montserrat", sans-serif: Uses a serif font.
+    margin-bottom: 8px: Adds margin below labels.
+    font-family: "Montserrat", sans-serif: Uses a sans-serif font.
     font-weight: 600: Uses semi-bold font weight.
+    font-size: 16px: Sets the font size of labels.
+    color: #47B0AA: Sets the color of label text.
+input[type="text"],
+input[type="email"],
+input[type="tel"]: Styles the input fields inside the form.
+    width: 100%: Makes input fields full-width.
+    padding: 12px: Adds padding inside input fields.
+    margin-bottom: 12px: Adds margin below input fields.
+    border: 1px solid #47B0AA: Adds a border around input fields.
+    border-radius: 4px: Rounds the corners of input fields.
+    box-sizing: border-box: Ensures padding and border are included in the width and height.
+    letter-spacing: 1.5px: Adds space between letters in input text.
+    color: #239895: Sets the color of input text.
+input::placeholder: Styles placeholder text in input fields.
+    color: #888: Sets the default color for placeholder text.
+input:not(:placeholder-shown): Styles input fields when placeholder is not shown.
+    border-color: #47B0AA: Changes border color when input is filled.
+input:-webkit-autofill: Styles input fields when autofilled by the browser.
+    -webkit-box-shadow: 0 0 0 1000px white inset !important: Removes the default autofill background.
+    -webkit-text-fill-color: #239895 !important: Sets the text color for autofilled fields.
+button[type="submit"]: Styles the submit button.
+    background-color: #47B0AA: Sets the background color of the button.
+    color: white: Sets the text color of the button.
+    border: none: Removes the default button border.
+    padding: 10px 15px: Adds padding inside the button.
+    border-radius: 4px: Rounds the corners of the button.
+    cursor: pointer: Changes the cursor to a pointer on hover.
+    font-family: "Montserrat", sans-serif: Uses a sans-serif font.
+    font-weight: 600: Uses semi-bold font weight.
+    font-size: 16px: Sets the font size of button text.
+    transition: background-color 0.3s ease: Adds a transition effect for background color change on hover.
+button[type="submit"]:hover: Styles the button when hovered over.
+    background-color: #6AC9BE: Changes the button color on hover for a visual effect.
+.error: Styles error messages.
+    color: red: Sets the text color of error messages.
+    font-size: 0.9em: Sets the font size of error messages.
+    display: block: Makes error messages block-level elements.
+    margin-top: 5px: Adds margin above error messages.
+.contact-us: Styles the heading for the contact section.
+    text-align: center: Centers the heading text.
+    padding: 5px: Adds padding inside the heading.
     font-size: 30px: Sets the font size of the heading text.
+    font-family: "Lora", serif: Uses a serif font for the heading text.
+    font-weight: 400: Uses normal font weight for the heading text.
+    margin-top: -12px: Adjusts the margin above the heading.
     text-transform: uppercase: Makes heading text uppercase.
+    letter-spacing: 2px: Adds space between letters in the heading text.
+    color: #47B0AA: Sets the color of the heading text.
+.name, .email, .phone: Styles the input fields.
+    font-family: "Montserrat", sans-serif: Uses a sans-serif font.
+    font-weight: 600: Uses semi-bold font weight.
+    font-size: 14px: Sets the font size of input text.
+    color: #008080: Sets the color of input text.
         </pre>
     </li>
     <li>
         <h4>JavaScript Functionality</h4>
         <pre>
-document.getElementById('calculateBtn').addEventListener('click', function() {
-    // Retrieve the value of the bill amount input field and convert it to a float
-    const billAmount = parseFloat(document.getElementById('billAmount').value);
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
 
-    // Retrieve the value of the tip percentage input field and convert it to a float
-    const tipPercentage = parseFloat(document.getElementById('tipPercentage').value);
+    function validateForm(event) {
+        event.preventDefault();
+        const errors = document.querySelectorAll(".error");
+        errors.forEach(error => error.textContent = '');
 
-    // Check if either of the input values is not a number or if they are invalid
-    if (isNaN(billAmount) || isNaN(tipPercentage) || billAmount <= 0 || tipPercentage < 0) {
-        alert('Please enter valid numbers. Bill amount must be greater than zero and tip percentage cannot be negative.');
-        return;
+        let isValid = true;
+
+        if (nameInput.value.trim() === '') {
+            showError(nameInput, 'Name is required.');
+            isValid = false;
+        }
+
+        if (emailInput.value.trim() === '') {
+
+
+            showError(emailInput, 'Email is required.');
+            isValid = false;
+        } else if (!validateEmail(emailInput.value.trim())) {
+            showError(emailInput, 'Email is invalid.');
+            isValid = false;
+        }
+
+        if (phoneInput.value.trim() !== '' && !validatePhone(phoneInput.value.trim())) {
+            showError(phoneInput, 'Phone number is invalid.');
+            isValid = false;
+        }
+
+        if (isValid) {
+            form.submit();
+        }
     }
 
-    // Calculate the tip amount based on the bill amount and tip percentage
-    const tipAmount = (billAmount * tipPercentage / 100).toFixed(2);
-    
-    // Calculate the total 
+    function showError(input, message) {
+        const errorSpan = document.getElementById(`${input.id}Error`);
+        errorSpan.textContent = message;
+    }
+
+    function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function validatePhone(phone) {
+        const phoneRegex = /^\d{10}$/;
+        return phoneRegex.test(phone);
+    }
+
+    form.addEventListener("submit", validateForm);
+});
+        </pre>
+    </li>
+</ol>
